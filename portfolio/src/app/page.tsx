@@ -1,47 +1,40 @@
-import {
-  AnimatedSpan,
-  Terminal,
-  TypingAnimation,
-} from "@/components/magicui/terminal";
+"use client";
 
+import React, { useState } from "react";
 import { Meteors } from "@/components/magicui/meteors";
 import { Particles } from "@/components/magicui/particles";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
-import { LoadingBar } from "@/components/loadingbar";
+
+import { TerminalPage } from "@/components/terminalpage";
+import { PortfolioHub } from "@/components/portfoliohub";
 
 export default function Home() {
-  return (
-      <div className="flex h-screen w-screen justify-center items-center bg-black"> 
-      <SmoothCursor />
-        <div className="relative overflow-hidden h-screen w-full">
-          <Meteors />
-          <Particles />
-        </div>
-        <div className="absolute z-10">
-            <Terminal className="bg-gray-700 opacity-70 shadow-lg shadow-gray-300/40 text-white">
-              <TypingAnimation>&gt; cd DreamChaser</TypingAnimation>
-              <TypingAnimation delay={1000}>&gt; init launch.exe</TypingAnimation>
-              <AnimatedSpan delay={2000} className="text-green-400">
-                <span>✔ No updates found.</span>
-              </AnimatedSpan>
-              <AnimatedSpan delay={4000} className="text-green-400">
-                <span>✔ Connected to servers.</span>
-              </AnimatedSpan>
-              <AnimatedSpan delay={5000} className="text-green-400">
-                <span>✔ Logged Into Account.</span>
-              </AnimatedSpan>
-              <AnimatedSpan delay={5500} className="text-gray-400">
-                <LoadingBar delay={5500}></LoadingBar>
-              </AnimatedSpan>
-              <AnimatedSpan delay={8000} className="text-green-400">
-                <span>✔ Launching.</span>
-              </AnimatedSpan>
+  const [loadingDone, setLoadingDone] = useState(false);
+  const [fadeOut, setFadeOut] = useState(false);
 
-              <AnimatedSpan delay={8500}>
-                <span>Blasting Off! 🚀 </span>
-              </AnimatedSpan>
-            </Terminal>
-          </div>
+  const handleLoadingComplete = () => {
+    setTimeout(() => setLoadingDone(true), 2500);
+    setTimeout(() => setFadeOut(true), 1500);
+  };
+
+  return (
+    <div className="flex h-screen w-screen justify-center items-center bg-black">
+      <SmoothCursor />
+      <div className="relative overflow-hidden h-screen w-full">
+        <Meteors />
+        <Particles />
       </div>
+      {!loadingDone ? (
+        <div
+          className={`h-1/2 w-2/3 mx-auto absolute z-10 transition-opacity duration-1000  ${
+            fadeOut ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <TerminalPage onFinish={handleLoadingComplete} />
+        </div>
+      ) : (
+        <PortfolioHub />
+      )}
+    </div>
   );
 }

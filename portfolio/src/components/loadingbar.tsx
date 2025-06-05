@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 
-export const LoadingBar = ({ delay = 0 }) => {
+export const LoadingBar = ({ delay = 0, onComplete }: { delay: number, onComplete: () => void }) => {
     const [displayedText, setDisplayedText] = useState<string>("");
 
     useEffect(() => {
@@ -11,7 +11,7 @@ export const LoadingBar = ({ delay = 0 }) => {
         let loading = 1;
 
         const animateStep = () => {
-            if (loading > max / steps) return;
+            if (loading > max / steps) { onComplete(); return; }
 
             let progress = "";
             let numSpaces = "     ";
@@ -31,7 +31,7 @@ export const LoadingBar = ({ delay = 0 }) => {
 
         // Cleanup
         return () => clearTimeout(startTimeout);
-    }, []);
+    }, [delay, onComplete]);
 
     return <div>{displayedText}</div>;
 };
