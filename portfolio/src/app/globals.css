@@ -134,3 +134,19 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin 10s linear infinite;
+}
+.animate-spin-slower {
+  animation: spin 25s linear infinite;
+}
+.animate-spin-slowest {
+  animation: spin 50s linear infinite;
+}
