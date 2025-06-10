@@ -2,8 +2,9 @@
 "use client";
 
 import React, { useState } from "react";
+import { AuroraText } from "@/components/magicui/aurora-text";
 
-import { Planet1Modal } from "./modals/Modal1";
+import { ProjectModal } from "./projects/ProjectModal";
 import { Planet2Modal } from "./modals/Modal2";
 import { Planet3Modal } from "./modals/Modal3";
 
@@ -20,36 +21,40 @@ export const PortfolioHub = () => {
   };
 
   return (
-  <div className="h-screen w-screen overflow-hidden absolute z-10 text-white animate-fade-in p-8">
-      <div className="max-w-1/3 relative top-1/3 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
-          <h1 className="text-4xl font-black underline mb-2">Tyran Rice Jr.</h1>
-          <h2 className="text-xl font-bold">Software Engineer & Game Developer</h2>
-          <h2 className="text-xl font-bold">Newark, Delaware, United States</h2>
+  <div className="h-screen w-screen overflow-hidden absolute z-10 text-white animate-fade-in p-8 transition duration-150 ease-in-out">
+      <div className="max-w-1/2 relative top-1/3 left-1/2 z-10 -translate-x-1/2 translate-y-1/4 text-center">
+          <img className="fixed rounded-full border-8 scale-25 -translate-y-5/8" src="./portfoliopicture.jpeg" alt="Picture Of Me"></img>
+          <AuroraText className="text-7xl font-black mb-2">Tyran Rice Jr.</AuroraText>
+          <h2 className="text-3xl font-bold">Software Engineer & Game Developer</h2>
+          <h2 className="text-3xl font-bold">Delaware, United States</h2>
       </div>
       <div className="-translate-y-32 z-20 text-center text-9xl font-black">
-        <div className="absolute scale-25 -translate-x-3/8 -translate-y-3/8" onClick={() => handleOpen("modal1")}>
+        <div className="absolute scale-25 -translate-x-3/8 -translate-y-3/8 transition delay-100 duration-150 ease-in-out hover:scale-30" 
+        onClick={() => handleOpen("projects")}>
           <h1 className="absolute h-1/2 w-full translate-y-3/4 z-20 drop-shadow-[2px_2px_8px_rgba(0,0,0,0.8)]">
             Projects
           </h1>
           <img className="animate-spin-slowest" src="./planets/planet1.png" alt="Planet 1"></img>
         </div>
-        <div className="absolute scale-30 translate-x-1/3 -translate-y-1/4" onClick={() => handleOpen("modal2")}>
+        <div className="absolute scale-30 translate-x-1/3 -translate-y-1/4 transition delay-100 duration-150 ease-in-out hover:scale-35" 
+        onClick={() => handleOpen("about me")}>
           <div className="absolute h-1/2 w-full translate-y-3/4 z-20 drop-shadow-[2px_2px_8px_rgba(0,0,0,0.8)]">
-            N/A
+            About Me
           </div>
           <img className="animate-spin-slower" src="./planets/planet2.png" alt="Planet 2"></img>
         </div>
-        <div className="absolute scale-25 -translate-x-1/8 -translate-y-1/8" onClick={() => handleOpen("modal3")}>
+        <div className="absolute scale-25 -translate-x-1/8 -translate-y-1/8 transition delay-100 duration-150 ease-in-out hover:scale-30" 
+        onClick={() => handleOpen("socials")}>
           <div className="absolute h-1/2 w-full translate-y-3/4 z-20 drop-shadow-[2px_2px_8px_rgba(0,0,0,0.8)]">
-            Skills
+            Socials
           </div>
           <img className="animate-spin-slow" src="./planets/planet3.png" alt="Planet 3"></img>
         </div>
       </div>
 
-      {openModal === "modal1" && <Planet1Modal onClose={handleClose} />}
-      {openModal === "modal2" && <Planet2Modal onClose={handleClose} />}
-      {openModal === "modal3" && <Planet3Modal onClose={handleClose} />}
+      {openModal === "projects" && <ProjectModal onClose={handleClose} />}
+      {openModal === "about me" && <Planet2Modal onClose={handleClose} />}
+      {openModal === "socials" && <Planet3Modal onClose={handleClose} />}
 
   </div>
   );
