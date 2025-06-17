@@ -2,11 +2,16 @@
 
 import { useState } from "react";
 import { ProjectCard } from "./projectcard";
-import { FilterPanel } from "../filterpanel";
-import { SearchBar } from "../searchbar";
-import { experiences } from "./projectdata";
-import { Experience_Interface } from "../interfaces/experience_interface";
+import { FilterPanel } from "../../filterpanel";
+import { SearchBar } from "../../searchbar";
+import { experiences } from "../../interfaces/projectdata";
+import { Experience_Interface } from "../../interfaces/experience_interface";
 import { motion, AnimatePresence } from "framer-motion";
+import { Meteors } from "@/components/magicui/meteors";
+import { Particles } from "@/components/magicui/particles";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { ScrollProgress } from "@/components/magicui/scroll-progress";
+
 
 export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
   const [search, setSearch] = useState("");
@@ -32,8 +37,13 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto"
+      className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto overflow-x-hidden"
     >
+      <ScrollProgress />
+      <div className="absolute overflow-hidden h-screen w-full -z-1">
+        <Meteors />
+        <Particles />
+      </div>
       <button
         onClick={onClose}
         className="absolute top-4 right-6 text-2xl hover:text-red-400"
@@ -46,7 +56,7 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
         transition={{ duration: 0.4 }}
         className="text-4xl font-bold mb-6"
       >
-        Experience & Projects
+        <AuroraText className="text-3xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Experience & Projects</AuroraText>
       </motion.h1>
 
       <SearchBar value={search} onChange={setSearch} />

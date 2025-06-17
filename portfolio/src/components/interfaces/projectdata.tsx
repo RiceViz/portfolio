@@ -9,6 +9,7 @@ export const experiences = [
     description: "Worked on building accessible, fast React interfaces.",
     tags: ["React", "Next.js", "Internship"],
     image: "/screenshots/openai-ui.png",
+    images: ["/screenshots/openai-ui.png"],
   },
   {
     id: "2",
@@ -20,6 +21,7 @@ export const experiences = [
     description: "Created a web-based game launcher and library in Unity.",
     tags: ["Unity", "C#", "GameDev"],
     image: "/screenshots/game-portal.png",
+    images: ["/screenshots/game-portal.png"],
   },
   {
     id: "3",
@@ -31,5 +33,6 @@ export const experiences = [
     description: "Built component libraries and mentored junior developers.",
     tags: ["React", "Freelance"],
     image: "/screenshots/consultant.png",
+    images: ["/screenshots/consultant.png"],
   },
 ];

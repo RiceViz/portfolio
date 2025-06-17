@@ -8,4 +8,5 @@ export interface Experience_Interface {
   description: string;
   tags: string[];
   image?: string;
+  images?: string;
 }

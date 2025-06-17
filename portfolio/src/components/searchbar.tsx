@@ -4,7 +4,7 @@ export const SearchBar = ({ value, onChange }: SearchBar_Interface) => (
   <input
     type="text"
     placeholder="Search by title, company, or tag..."
-    className="w-full p-2 rounded text-black"
+    className="w-full mb-2 p-2 rounded text-white hover:border-2 hover:mb-1"
     value={value}
     onChange={(e) => onChange(e.target.value)}
   />
