@@ -10,7 +10,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Meteors } from "@/components/magicui/meteors";
 import { Particles } from "@/components/magicui/particles";
 import { AuroraText } from "@/components/magicui/aurora-text";
-import { ScrollProgress } from "@/components/magicui/scroll-progress";
 import { Link } from 'lucide-react';
 import { tagCategoryMap } from "@/components/interfaces/tags_interface";
 
@@ -40,7 +39,6 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
       exit={{ opacity: 0 }}
       className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto overflow-x-hidden"
     >
-      <ScrollProgress />
       <div className="absolute overflow-hidden h-screen w-full -z-1">
         <Meteors />
         <Particles />

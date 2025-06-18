@@ -28,6 +28,7 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
         <option className="text-black" value="all">All</option>
         <option className="text-black" value="job">Jobs</option>
         <option className="text-black" value="project">Projects</option>
+        <option className="text-black" value="game">Games</option>
       </select>
       <div className="flex flex-wrap gap-2.5">
         {allTags.map((tag) => {

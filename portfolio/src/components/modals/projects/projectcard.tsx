@@ -20,11 +20,11 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
   return (
     <div className="bg-white text-black rounded-lg shadow-md p-4 space-y-2 h-full">
       {images.length > 0 && (
-        <div className="relative w-full h-48">
+        <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-md bg-black">
           <img
             src={images[imageIndex]}
             alt={`${experience.title} screenshot ${imageIndex + 1}`}
-            className="rounded w-full h-48 object-cover"
+            className="rounded w-full h-full object-cover object-center"
           />
         </div>
       )}
@@ -33,7 +33,7 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
       <p className="text-sm text-gray-600">
         {experience.company} • {experience.start} - {experience.end}
       </p>
-      <p>{experience.description}</p>
+      <p>{experience.short_description}</p>
       <div className="flex flex-wrap gap-2 mt-2">
         {experience.tags.map((tag: string) => {
           const category = tagCategoryMap[tag] || "default";

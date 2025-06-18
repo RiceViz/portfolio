@@ -9,7 +9,7 @@ export const tagCategoryMap: Record<string, string> = {
   "C#": "language",
   "C/C++": "language",
   "Java": "language",
-  "JavaScript": "language",
+  //"JavaScript": "language",
   "TypeScript": "language",
   "HTML": "language",
   "CSS": "language",
@@ -40,13 +40,14 @@ export const tagCategoryMap: Record<string, string> = {
   "Machine Learning": "specialty",
   "Data Analysis": "specialty",
   "LLM": "specialty",
+  "Game Development": "specialty",
 };
 
 export const tagColors: Record<string, string> = {
     language: "bg-yellow-200 text-yellow-800",
     tool: "bg-blue-200 text-blue-800",
     role: "bg-green-200 text-green-800",
-      specialty: "bg-purple-200 text-purple-800",
+    specialty: "bg-purple-200 text-purple-800",
     default: "bg-gray-200 text-gray-800",
 };
 
