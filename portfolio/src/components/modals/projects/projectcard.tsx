@@ -18,7 +18,7 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
   }, [images]);
 
   return (
-    <div className="bg-white text-black rounded-lg shadow-md p-4 space-y-2">
+    <div className="bg-white text-black rounded-lg shadow-md p-4 space-y-2 h-full">
       {images.length > 0 && (
         <div className="relative w-full h-48">
           <img

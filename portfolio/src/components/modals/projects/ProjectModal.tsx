@@ -11,7 +11,8 @@ import { Meteors } from "@/components/magicui/meteors";
 import { Particles } from "@/components/magicui/particles";
 import { AuroraText } from "@/components/magicui/aurora-text";
 import { ScrollProgress } from "@/components/magicui/scroll-progress";
-
+import { Link } from 'lucide-react';
+import { tagCategoryMap } from "@/components/interfaces/tags_interface";
 
 export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
   const [search, setSearch] = useState("");
@@ -44,11 +45,11 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
         <Meteors />
         <Particles />
       </div>
-      <button
-        onClick={onClose}
-        className="absolute top-4 right-6 text-2xl hover:text-red-400"
-      >
-        ✕
+      <button onClick={onClose} className="absolute top-6 right-28 text-2xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4) rounded-lg p-3 text-white hover:scale-110">
+        <Link className="absolute -left-5 top-4.5" /> Download Resume
+      </button>
+      <button onClick={onClose} className="absolute top-6 right-6 text-2xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4) rounded-lg p-3 text-white hover:scale-110">
+        Back
       </button>
       <motion.h1
         initial={{ y: -20, opacity: 0 }}
@@ -56,7 +57,7 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
         transition={{ duration: 0.4 }}
         className="text-4xl font-bold mb-6"
       >
-        <AuroraText className="text-3xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Experience & Projects</AuroraText>
+        <AuroraText className="text-5xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Experience & Projects</AuroraText>
       </motion.h1>
 
       <SearchBar value={search} onChange={setSearch} />
@@ -72,7 +73,15 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ duration: 0.3 }}
             >
-              <ProjectCard experience={exp} />
+              <ProjectCard experience={{
+                ...exp,
+                 tags: [...exp.tags].sort((a, b) => {
+                  const order = ["role", "specialty", "tool", "language"];
+                  const catA = tagCategoryMap[a] || "default";
+                  const catB = tagCategoryMap[b] || "default";
+                  return order.indexOf(catA) - order.indexOf(catB);
+                })
+               }} />
             </motion.div>
           ))}
         </AnimatePresence>
