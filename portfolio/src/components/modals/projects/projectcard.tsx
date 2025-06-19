@@ -29,12 +29,12 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
         </div>
       )}
 
-      <h2 className="text-xl font-bold">{experience.title}</h2>
-      <p className="text-sm text-gray-600">
+      <h2 className="text-lg font-bold">{experience.title}</h2>
+      <p className="text-xs text-gray-600">
         {experience.company} • {experience.start} - {experience.end}
       </p>
-      <p className="mb-0">{experience.short_description}</p>
-      <small className="text-gray-600 hidden md:inline">{experience.long_description?.map((bulletPoint: string) => {
+      <p className="text-sm mb-0">{experience.short_description}</p>
+      <small className="text-sm text-gray-600 hidden md:inline">{experience.long_description?.map((bulletPoint: string) => {
         return(
           <span key={bulletPoint}>
             {bulletPoint} <br></br>
@@ -49,7 +49,7 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
           return (
             <span
               key={tag}
-              className={`inline-flex items-center ${colorClass} px-4 py-1 text-s rounded-full`}
+              className={`inline-flex items-center ${colorClass} px-4 py-1 text-sm rounded-full`}
             >
               {icon} {tag}
             </span>

@@ -10,7 +10,7 @@ import { LoadingBar } from "@/components/loadingbar";
 
 export const TerminalPage = ({ onFinish }: { onFinish: () => void }) => {
     return(
-            <Terminal className="bg-gray-700 opacity-70 shadow-lg shadow-gray-300/40 h-3/4 text-white translate-x-1/2">
+            <Terminal className="bg-gray-700 opacity-70 shadow-lg shadow-gray-300/40 h-auto text-white translate-x-1/2">
               <TypingAnimation>&gt; cd DreamChaser</TypingAnimation>
               <TypingAnimation delay={1000}>
                 &gt; init launch.exe

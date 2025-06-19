@@ -18,7 +18,7 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
 
     <button
       onClick={onClose}
-      className="absolute top-6 right-6 text-2xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110"
+      className="absolute top-6 right-6 text-lg font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110"
     >
       Back
     </button>
@@ -27,9 +27,9 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="text-4xl font-bold mb-6 text-center"
+      className="text-2xl font-bold mb-6 text-center"
     >
-      <AuroraText className="text-xl md:text-2xl lg:text-5xl font-black drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">
+      <AuroraText className="text-xl md:text-2xl lg:text-4xl font-black drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">
         Connect With Me
       </AuroraText>
     </motion.h1>
@@ -52,7 +52,7 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
       </div>
 
       {/* Right: Message */}
-      <div className="flex flex-col justify-center space-y-6 text-lg">
+      <div className="flex flex-col justify-center space-y-6 text-md">
         <p>
           I’m always open to new opportunities, collaborations, or just connecting with fellow developers and creatives.
         </p>

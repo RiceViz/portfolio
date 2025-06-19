@@ -26,7 +26,7 @@ export default function Home() {
       </div>
       {!loadingDone ? (
         <div
-          className={`h-1/2 w-2/3 mx-auto absolute z-10 transition-opacity duration-1000  ${
+          className={`h-1/2 w-2/3 mx-auto absolute z-10 items-center transition-opacity duration-1000  ${
             fadeOut ? "opacity-0" : "opacity-100"
           }`}
         >

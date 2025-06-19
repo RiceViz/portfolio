@@ -19,11 +19,11 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
   const allTags = Object.keys(tagCategoryMap);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 mt-4">
+    <div className="flex flex-col sm:flex-row gap-4 mt-4 text-sm">
       <select
         onChange={handleTypeChange}
         value={filters.type || "all"}
-        className="p-2 text-white mb-2 rounded hover:border-2 hover:mb-1"
+        className="p-2 text-sm text-white mb-2 rounded hover:border-2 hover:mb-1"
       >
         <option className="text-black" value="all">All</option>
         <option className="text-black" value="job">Jobs</option>
@@ -40,7 +40,7 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
             <button
               key={tag}
               onClick={() => handleTagToggle(tag)}
-              className={`inline-flex items-center gap-1 px-4 py-1 text-s rounded-full border hover:scale-110 ${
+              className={`inline-flex items-center gap-1 px-4 py-1 text-sm rounded-full border hover:scale-110 ${
                 isActive
                   ? `${colorClass} border-transparent`
                   : `bg-gray-200 text-gray-800`

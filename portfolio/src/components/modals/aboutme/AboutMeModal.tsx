@@ -22,7 +22,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
 
     <button
       onClick={onClose}
-      className="absolute top-6 right-6 text-2xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110"
+      className="absolute top-6 right-6 text-lg font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110"
     >
       Back
     </button>
@@ -31,9 +31,9 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4 }}
-      className="text-4xl font-bold mb-6 text-center"
+      className="font-bold mb-6 text-center"
     >
-      <AuroraText className="text-xl md:text-2xl lg:text-5xl font-black drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">
+      <AuroraText className="text-xl md:text-2xl lg:text-4xl font-black drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">
         About Me
       </AuroraText>
     </motion.h1>
@@ -47,8 +47,8 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
           className="w-48 h-48 rounded-full border-4 border-white object-cover shadow-lg"
         />
         <div>
-            <h2 className="text-2xl font-semibold">Tyran Rice Jr.</h2>
-            <h3>Delaware, United States</h3>
+            <h2 className="text-xl font-semibold">Tyran Rice Jr.</h2>
+            <h3 className="text-base">Delaware, United States</h3>
         </div>
         <div>
           <h3 className="text-xl font-bold mb-2">Skills & Tools</h3>
@@ -63,7 +63,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
                     return (
                         <span
                         key={tag}
-                        className={`inline-flex items-center ${colorClass} px-4 py-1 text-s rounded-full`}
+                        className={`inline-flex items-center ${colorClass} px-4 py-1 text-sm rounded-full`}
                         >
                         {icon} {tag}
                         </span>
@@ -74,7 +74,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
       </div>
 
       {/* Right: Bio and Resume */}
-      <div className="flex flex-col justify-center space-y-6 text-lg items-center">
+      <div className="flex flex-col justify-center space-y-6 text-base items-center">
         <p>
           I’m <strong>Tyran Rice Jr.</strong>, a software engineer and game developer with a passion for 
           artificial intelligence, gamification, and anything related to space!
@@ -93,7 +93,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
         <a
           href="/files/TyranRice_Resume.pdf"
           download
-          className="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110"
+          className="inline-flex items-center gap-2 bg-white text-base text-black px-4 py-2 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110"
         >
           <Download className="w-4 h-4" /> Download Resume
         </a>
