@@ -1,0 +1,103 @@
+/* eslint-disable @next/next/no-img-element */
+import { tagCategoryMap, tagColors, tagIcons } from "@/components/interfaces/tags_interface";
+import { AuroraText } from "@/components/magicui/aurora-text";
+import { Meteors } from "@/components/magicui/meteors";
+import { Particles } from "@/components/magicui/particles";
+import { motion } from "framer-motion";
+import { Download } from "lucide-react";
+
+const allTags = Object.keys(tagCategoryMap);
+
+export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
+  <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto overflow-x-hidden"
+  >
+    <div className="absolute overflow-hidden h-screen w-full -z-1">
+      <Meteors />
+      <Particles />
+    </div>
+
+    <button
+      onClick={onClose}
+      className="absolute top-6 right-6 text-2xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110"
+    >
+      Back
+    </button>
+
+    <motion.h1
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="text-4xl font-bold mb-6 text-center"
+    >
+      <AuroraText className="text-xl md:text-2xl lg:text-5xl font-black drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">
+        About Me
+      </AuroraText>
+    </motion.h1>
+
+    <div className="max-w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 z-10 relative mt-8 text-center">
+      {/* Left: Profile Info */}
+      <div className="flex flex-col items-center space-y-6">
+        <img
+          src="/portfoliopicture.jpeg"
+          alt="Tyran Rice Jr."
+          className="w-48 h-48 rounded-full border-4 border-white object-cover shadow-lg"
+        />
+        <div>
+            <h2 className="text-2xl font-semibold">Tyran Rice Jr.</h2>
+            <h3>Delaware, United States</h3>
+        </div>
+        <div>
+          <h3 className="text-xl font-bold mb-2">Skills & Tools</h3>
+          <ul className="grid grid-cols-4 gap-2 text-xs">
+            {allTags.filter((tag: string) => {
+                if(tagCategoryMap[tag] === "role") return false;
+                else return true;
+                }).map((tag: string) => {
+                    const category = tagCategoryMap[tag] || "default";
+                    const colorClass = tagColors[category] || tagColors.default;
+                    const icon = tagIcons[category] || null;
+                    return (
+                        <span
+                        key={tag}
+                        className={`inline-flex items-center ${colorClass} px-4 py-1 text-s rounded-full`}
+                        >
+                        {icon} {tag}
+                        </span>
+                    );
+                    })}
+          </ul>
+        </div>
+      </div>
+
+      {/* Right: Bio and Resume */}
+      <div className="flex flex-col justify-center space-y-6 text-lg items-center">
+        <p>
+          I’m <strong>Tyran Rice Jr.</strong>, a software engineer and game developer with a passion for 
+          artificial intelligence, gamification, and anything related to space!
+        </p>
+        <p>
+            I graduated from the University of Delaware with a major in Computer Science and a minor in Mathematics, 
+            earning a cumulative GPA of 3.5. Throughout college, I held several leadership roles, including Resident Assistant, 
+            co-founder and president of the campus Game Development Club, team leader in the Esports program, and participant in a 
+            freshman leadership program. I also competed in multiple hackathons and game jams, earning over $2,000 in awards for my 
+            contributions and innovation.
+        </p>
+        <p className="italic">
+          Let’s build something meaningful and make an impact on the world!
+        </p>
+
+        <a
+          href="/files/TyranRice_Resume.pdf"
+          download
+          className="inline-flex items-center gap-2 bg-white text-black px-4 py-2 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110"
+        >
+          <Download className="w-4 h-4" /> Download Resume
+        </a>
+      </div>
+    </div>
+  </motion.div>
+);

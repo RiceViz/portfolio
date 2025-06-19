@@ -5,8 +5,8 @@ import React, { useState } from "react";
 import { AuroraText } from "@/components/magicui/aurora-text";
 
 import { ProjectModal } from "./modals/projects/ProjectModal";
-import { Planet2Modal } from "./modals/Modal2";
-import { Planet3Modal } from "./modals/Modal3";
+import { AboutMeModal } from "./modals/aboutme/AboutMeModal";
+import { SocialsModal } from "./modals/socials/SocialsModal";
 
 export const PortfolioHub = () => {
   const [openModal, setOpenModal] = useState<string | null>(null);
@@ -53,8 +53,8 @@ export const PortfolioHub = () => {
       </div>
 
       {openModal === "projects" && <ProjectModal onClose={handleClose} />}
-      {openModal === "about me" && <Planet2Modal onClose={handleClose} />}
-      {openModal === "socials" && <Planet3Modal onClose={handleClose} />}
+      {openModal === "about me" && <AboutMeModal onClose={handleClose} />}
+      {openModal === "socials" && <SocialsModal onClose={handleClose} />}
 
   </div>
   );
