@@ -20,7 +20,7 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
   return (
     <div className="bg-white text-black rounded-lg shadow-md p-4 space-y-2 h-full">
       {images.length > 0 && (
-        <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden rounded-md bg-black">
+        <div className="relative h-32 sm:h-40 md:h-48 overflow-hidden rounded-md bg-black">
           <img
             src={images[imageIndex]}
             alt={`${experience.title} screenshot ${imageIndex + 1}`}
@@ -30,18 +30,18 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
       )}
 
       <h2 className="text-lg font-bold">{experience.title}</h2>
-      <p className="text-xs text-gray-600">
+      <p className="text-xs text-gray-600 -mt-2">
         {experience.company} • {experience.start} - {experience.end}
       </p>
-      <p className="text-sm mb-0">{experience.short_description}</p>
-      <small className="text-sm text-gray-600 hidden md:inline">{experience.long_description?.map((bulletPoint: string) => {
+      {/* <p className="text-sm mb-0">{experience.short_description}</p> */}
+      <small className="text-sm text-gray-600">{experience.long_description?.map((bulletPoint: string) => {
         return(
           <span key={bulletPoint}>
             {bulletPoint} <br></br>
           </span>
         );
       })}</small>
-      <div className="flex flex-wrap gap-2 mt-4">
+      <div className="flex flex-wrap gap-2 mt-2">
         {experience.tags.map((tag: string) => {
           const category = tagCategoryMap[tag] || "default";
           const colorClass = tagColors[category] || tagColors.default;
@@ -49,7 +49,7 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
           return (
             <span
               key={tag}
-              className={`inline-flex items-center ${colorClass} px-4 py-1 text-sm rounded-full`}
+              className={`inline-flex items-center ${colorClass} px-2.5 py-1 text-sm rounded-full`}
             >
               {icon} {tag}
             </span>

@@ -13,7 +13,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto overflow-x-hidden"
+    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-hidden"
   >
     <div className="absolute overflow-hidden h-screen w-full -z-1">
       <Meteors />
@@ -47,34 +47,13 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
           className="w-48 h-48 rounded-full border-4 border-white object-cover shadow-lg"
         />
         <div>
-            <h2 className="text-xl font-semibold">Tyran Rice Jr.</h2>
+            <h2 className="text-2xl font-semibold -mt-4">Tyran Rice Jr.</h2>
             <h3 className="text-base">Delaware, United States</h3>
-        </div>
-        <div>
-          <h3 className="text-xl font-bold mb-2">Skills & Tools</h3>
-          <ul className="grid grid-cols-4 gap-2 text-xs">
-            {allTags.filter((tag: string) => {
-                if(tagCategoryMap[tag] === "role") return false;
-                else return true;
-                }).map((tag: string) => {
-                    const category = tagCategoryMap[tag] || "default";
-                    const colorClass = tagColors[category] || tagColors.default;
-                    const icon = tagIcons[category] || null;
-                    return (
-                        <span
-                        key={tag}
-                        className={`inline-flex items-center ${colorClass} px-4 py-1 text-sm rounded-full`}
-                        >
-                        {icon} {tag}
-                        </span>
-                    );
-                    })}
-          </ul>
         </div>
       </div>
 
       {/* Right: Bio and Resume */}
-      <div className="flex flex-col justify-center space-y-6 text-base items-center">
+      <div className="flex flex-col justify-center space-y-6 text-sm items-center">
         <p>
           I’m <strong>Tyran Rice Jr.</strong>, a software engineer and game developer with a passion for 
           artificial intelligence, gamification, and anything related to space!
@@ -93,11 +72,32 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
         <a
           href="/files/TyranRice_Resume.pdf"
           download
-          className="inline-flex items-center gap-2 bg-white text-base text-black px-4 py-2 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110"
+          className="inline-flex items-center gap-2 -mt-2 bg-white text-base text-black px-4 py-1.5 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110"
         >
           <Download className="w-4 h-4" /> Download Resume
         </a>
       </div>
     </div>
+    <div className="overflow-hidden">
+          <h3 className="text-xl font-bold mb-2 text-center">Skills & Tools</h3>
+          <ul className="grid grid-flow-dense grid-cols-6 gap-2 text-xs">
+            {allTags.filter((tag: string) => {
+                if(tagCategoryMap[tag] === "role") return false;
+                else return true;
+                }).map((tag: string) => {
+                    const category = tagCategoryMap[tag] || "default";
+                    const colorClass = tagColors[category] || tagColors.default;
+                    const icon = tagIcons[category] || null;
+                    return (
+                        <span
+                        key={tag}
+                        className={`inline-flex items-center ${colorClass} px-2.5 py-1 text-sm rounded-full`}
+                        >
+                        {icon} {tag}
+                        </span>
+                    );
+                    })}
+          </ul>
+        </div>
   </motion.div>
 );

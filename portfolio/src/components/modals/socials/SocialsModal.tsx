@@ -9,7 +9,7 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto overflow-x-hidden"
+    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-hidden"
   >
     <div className="absolute overflow-hidden h-screen w-full -z-1">
       <Meteors />

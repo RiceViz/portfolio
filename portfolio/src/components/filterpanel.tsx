@@ -19,7 +19,7 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
   const allTags = Object.keys(tagCategoryMap);
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 mt-4 text-sm">
+    <div className="flex flex-col sm:flex-row gap-4 mt-2 text-sm">
       <select
         onChange={handleTypeChange}
         value={filters.type || "all"}
@@ -30,7 +30,7 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
         <option className="text-black" value="project">Projects</option>
         <option className="text-black" value="game">Games</option>
       </select>
-      <div className="flex flex-wrap gap-2.5">
+      <div className="flex flex-wrap gap-2.5 text-sm">
         {allTags.map((tag) => {
           const category = tagCategoryMap[tag] || "default";
           const colorClass = tagColors[category] || tagColors.default;
@@ -40,7 +40,7 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
             <button
               key={tag}
               onClick={() => handleTagToggle(tag)}
-              className={`inline-flex items-center gap-1 px-4 py-1 text-sm rounded-full border hover:scale-110 ${
+              className={`inline-flex items-center gap-.5 px-2.5 py-1 text-sm rounded-full border hover:scale-110 ${
                 isActive
                   ? `${colorClass} border-transparent`
                   : `bg-gray-200 text-gray-800`
