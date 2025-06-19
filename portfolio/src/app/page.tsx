@@ -18,7 +18,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex h-screen w-screen justify-center items-center bg-black">
+    <div className="flex h-screen w-screen justify-center items-center bg-black cursor-none">
       <SmoothCursor />
       <div className="relative overflow-hidden h-screen w-full">
         <Meteors />

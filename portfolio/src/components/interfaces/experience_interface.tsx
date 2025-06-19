@@ -6,7 +6,7 @@ export interface Experience_Interface {
   start: string;
   end: string;
   short_description: string;
-  long_description?: string;
+  long_description?: string[];
   tags: string[];
   image?: string;
   images?: string[];

@@ -24,7 +24,7 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
           <img
             src={images[imageIndex]}
             alt={`${experience.title} screenshot ${imageIndex + 1}`}
-            className="rounded w-full h-full object-cover object-center"
+            className="rounded w-full h-full object-cover"
           />
         </div>
       )}
@@ -33,8 +33,15 @@ export const ProjectCard = ({ experience }: { experience: Experience_Interface }
       <p className="text-sm text-gray-600">
         {experience.company} • {experience.start} - {experience.end}
       </p>
-      <p>{experience.short_description}</p>
-      <div className="flex flex-wrap gap-2 mt-2">
+      <p className="mb-0">{experience.short_description}</p>
+      <small className="text-gray-600 hidden md:inline">{experience.long_description?.map((bulletPoint: string) => {
+        return(
+          <span key={bulletPoint}>
+            {bulletPoint} <br></br>
+          </span>
+        );
+      })}</small>
+      <div className="flex flex-wrap gap-2 mt-4">
         {experience.tags.map((tag: string) => {
           const category = tagCategoryMap[tag] || "default";
           const colorClass = tagColors[category] || tagColors.default;
