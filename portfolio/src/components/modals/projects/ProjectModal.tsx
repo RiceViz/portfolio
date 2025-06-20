@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState } from "react";
@@ -46,7 +47,7 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
       {/*<a href="Should Be In Public Folder" download="" className="absolute top-6 right-28 text-lg font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110">
         <Download className="absolute -left-5 top-3.5" /> Download Resume
       </a>*/}
-      <button onClick={onClose} className="absolute top-6 right-6 text-lg font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110">
+      <button onClick={onClose} className="absolute rounded-md top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:scale-110">
         Back
       </button>
       <motion.h1
@@ -55,10 +56,10 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
         transition={{ duration: 0.4 }}
         className="font-bold mb-2"
       >
-        <AuroraText className="text-xl md:text-2xl lg:text-4xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Experience & Projects</AuroraText>
+        <AuroraText className="text-xl md:text-2xl lg:text-4xl font-black mb-4 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Experience & Projects</AuroraText>
       </motion.h1>
 
-      <SearchBar value={search} onChange={setSearch} />
+      {/*<SearchBar value={search} onChange={setSearch} />*/}
       <FilterPanel filters={filters} setFilters={setFilters} />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">

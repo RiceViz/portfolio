@@ -22,7 +22,7 @@ export const PortfolioHub = () => {
 
   return (
   <div className="h-screen w-screen overflow-hidden absolute z-10 text-white animate-fade-in p-8 transition duration-150 ease-in-out">
-      <div className="max-w-1/2 relative top-1/4 left-1/2 z-10 -translate-x-1/2 translate-y-1/4 text-center">
+      <div className="max-w-1/2 relative top-1/5 left-1/2 z-10 -translate-x-1/2 translate-y-1/4 text-center">
           {/*<img className="fixed rounded-full border-8 scale-25 -translate-y-5/8" src="./portfoliopicture.jpeg" alt="Picture Of Me"></img>*/}
           <AuroraText className="text-7xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Tyran Rice Jr.</AuroraText>
           <h2 className="text-xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Software Engineer & Game Developer</h2>

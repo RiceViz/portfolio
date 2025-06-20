@@ -18,7 +18,7 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
 
     <button
       onClick={onClose}
-      className="absolute top-6 right-6 text-lg font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110"
+      className="rounded-md absolute top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:scale-110"
     >
       Back
     </button>
