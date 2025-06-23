@@ -17,10 +17,11 @@ export default function Home() {
     setTimeout(() => setFadeOut(true), 1500);
   };
 
+
   return (
     <div className="flex h-screen w-screen justify-center items-center bg-black cursor-none">
       <SmoothCursor />
-      <div className="relative overflow-hidden h-screen w-full">
+      <div className="relative overflow-hidden h-screen w-full cursor-none">
         <Meteors />
         <Particles />
       </div>

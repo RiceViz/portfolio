@@ -53,7 +53,8 @@ export const experiences: Experience_Interface[] = [
     "● Utilized Github, Git, and version control. Conducted code reviews, source control management and build/testing processes."
     ],
     tags: ["Internship", "TypeScript", "Phaser", "HTML", "CSS","React"],
-    images: ["/projects/TaroMama.png"]
+    images: ["/projects/TaroMama.png"],
+    rating: 1,
   },
   {
     id: "4",
@@ -70,7 +71,7 @@ export const experiences: Experience_Interface[] = [
     "● Uses one of OpenAI’s large language models and natural language processes to decipher and generate human language to make an effective and cohesive story for the user with the use of embeddings and image generation."
     ],
     tags: ["Python", "OpenAI", "Tkinter", "Machine Learning"],
-    images: ["/projects/AIAdventures1.png","/projects/AIAdventures2.png","/projects/AIAdventures3.png",]
+    images: ["/projects/AIAdventures1.png","/projects/AIAdventures2.png","/projects/AIAdventures3.png",],
   },
   {
     id: "5",
@@ -87,7 +88,8 @@ export const experiences: Experience_Interface[] = [
     "● Successfully pitched and launched the website to ESports manager and coordinator of University Of Delaware."
     ],
     tags: ["Angular", "TypeScript", "Full-stack","HTML", "CSS","Firebase"],
-    images: ["/projects/Arena1.png","/projects/Arena2.png","/projects/Arena3.png",]
+    images: ["/projects/Arena1.png","/projects/Arena2.png","/projects/Arena3.png",],
+    rating: 2,
   },
   {
     id: "6",
@@ -122,7 +124,8 @@ export const experiences: Experience_Interface[] = [
     "● Presentation won ‘Best Use Of Outside Resources’ at the event, winning over 15 other different teams of size 3-5."
     ],
     tags: ["Python", "Data Analysis", "RStudio","R"],
-    images: ["/projects/DSII1.png","/projects/DSII2.png","/projects/DSII3.png","/projects/DSII4.png",]
+    images: ["/projects/DSII1.png","/projects/DSII2.png","/projects/DSII3.png","/projects/DSII4.png",],
+    rating: 2,
   },
   {
     id: "8",
@@ -139,7 +142,8 @@ export const experiences: Experience_Interface[] = [
     "● Pretrained text with educational texts from the web, only using 10B tokes (~20 GB)."
     ],
     tags: ["LLM", "PyTorch", "Machine Learning"],
-    images: ["/projects/LLM1.png","/projects/LLM2.png","/projects/LLM3.png","/projects/LLM4.png",]
+    images: ["/projects/LLM1.png","/projects/LLM2.png","/projects/LLM3.png","/projects/LLM4.png",],
+    rating: 3,
   },
     {
     id: "9",
@@ -175,7 +179,8 @@ export const experiences: Experience_Interface[] = [
     "● Secured 1st place among 30+ teams for user-centered design, innovation, and clear problem-solving."
     ],
       tags: ["Java"],
-    images: ["/projects/UGO.png"]
+    images: ["/projects/UGO.png"],
+    rating: 3,
   }
 ];
 

@@ -109,6 +109,7 @@ export function SmoothCursor({
     damping: 35,
   });
 
+
   useEffect(() => {
     const updateVelocity = (currentPos: Position) => {
       const currentTime = Date.now();

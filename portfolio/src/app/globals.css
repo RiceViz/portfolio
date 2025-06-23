@@ -148,7 +148,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-mono;
   }
 }
 
@@ -166,4 +166,55 @@
 }
 .animate-spin-slowest {
   animation: spin 50s linear infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(3deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.4),
+                0 0 10px rgba(255, 255, 255, 0.3),
+                0 0 15px rgba(255, 255, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6),
+                0 0 20px rgba(255, 255, 255, 0.5),
+                0 0 25px rgba(255, 255, 255, 0.4);
+  }
+}
+
+@keyframes move-horizontal {
+  0% {
+    transform: translateX(-200px); /* starts off-screen left */
+  }
+  100% {
+    transform: translateX(100vw); /* exits off-screen right */
+  }
+}
+
+.planet-fly {
+  position: absolute;
+  top: var(--top, 50%);
+  z-index: -1;
+  animation: move-horizontal linear infinite;
+  animation-duration: var(--duration, 60s); /* customize per planet */
+}
+
+@keyframes fly-random {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(-120vw) translateY(100vh);
+    opacity: 0;
+  }
 }

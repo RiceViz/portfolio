@@ -10,4 +10,5 @@ export interface Experience_Interface {
   tags: string[];
   image?: string;
   images?: string[];
+  rating?: number;
 }

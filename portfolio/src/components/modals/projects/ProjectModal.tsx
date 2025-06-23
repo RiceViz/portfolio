@@ -31,7 +31,8 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
       exp.title.toLowerCase().includes(search.toLowerCase()) ||
       exp.tags.join(" ").toLowerCase().includes(search.toLowerCase());
     return matchesType && matchesTags && matchesSearch;
-  });
+  })
+  .sort((a, b) => (b.rating || 0) - (a.rating || 0));
 
   return (
     <motion.div
@@ -47,7 +48,7 @@ export const ProjectModal = ({ onClose }: { onClose: () => void }) => {
       {/*<a href="Should Be In Public Folder" download="" className="absolute top-6 right-28 text-lg font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] rounded-lg p-3 text-white hover:scale-110">
         <Download className="absolute -left-5 top-3.5" /> Download Resume
       </a>*/}
-      <button onClick={onClose} className="absolute rounded-md top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:scale-110">
+      <button onClick={onClose} className="absolute rounded-md top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)] transition hover:scale-125 cursor-none">
         Back
       </button>
       <motion.h1

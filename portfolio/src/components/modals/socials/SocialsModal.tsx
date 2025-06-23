@@ -18,7 +18,7 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
 
     <button
       onClick={onClose}
-      className="rounded-md absolute top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:scale-110"
+      className="rounded-md absolute top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)] transition hover:scale-125 cursor-none"
     >
       Back
     </button>
@@ -37,15 +37,15 @@ export const SocialsModal = ({ onClose }: { onClose: () => void }) => (
     <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 z-10 relative mt-8">
       {/* Left: Icons */}
       <div className="flex flex-col items-center justify-center space-y-6 text-xl">
-        <a href="mailto:tyranricejr@gmail.com" className="flex items-center space-x-4 hover:text-blue-300 hover:scale-110">
+        <a href="mailto:tyranricejr@gmail.com" className="flex items-center space-x-4 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)] transition hover:scale-125 cursor-none">
           <Mail className="w-6 h-6" />
           <span>Email</span>
         </a>
-        <a href="https://github.com/RiceViz" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-blue-300 hover:scale-110">
+        <a href="https://github.com/RiceViz" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)] transition hover:scale-125 cursor-none">
           <Github className="w-6 h-6" />
           <span>GitHub</span>
         </a>
-        <a href="https://www.linkedin.com/in/tyran-rice-jr/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 hover:text-blue-300 hover:scale-110">
+        <a href="https://www.linkedin.com/in/tyran-rice-jr/" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-4 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)] transition hover:scale-125 cursor-none">
           <Linkedin className="w-6 h-6" />
           <span>LinkedIn</span>
         </a>

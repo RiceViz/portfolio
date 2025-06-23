@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import { tagCategoryMap, tagColors, tagIcons } from "@/components/interfaces/tags_interface";
 import { AuroraText } from "@/components/magicui/aurora-text";
@@ -13,16 +14,16 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
-    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-hidden"
+    className="fixed inset-0 z-[9999] bg-black bg-opacity-90 text-white p-6 overflow-y-auto overflow-x-hidden lg:overflow-hidden"
   >
-    <div className="absolute overflow-hidden h-screen w-full -z-1">
+    <div className="absolute lg:overflow-hidden h-screen w-full -z-1">
       <Meteors />
       <Particles />
     </div>
 
     <button
       onClick={onClose}
-      className="absolute rounded-md top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:scale-110"
+      className="absolute rounded-md top-6 right-6 text-lg font-bold p-3 text-white drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)] hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)] transition hover:scale-125 cursor-none"
     >
       Back
     </button>
@@ -38,22 +39,11 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
       </AuroraText>
     </motion.h1>
 
-    <div className="max-w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 z-10 relative mt-8 text-center">
-      {/* Left: Profile Info */}
-      <div className="flex flex-col items-center space-y-6">
-        <img
-          src="/portfoliopicture.jpeg"
-          alt="Tyran Rice Jr."
-          className="w-48 h-48 rounded-full border-4 border-white object-cover shadow-lg"
-        />
-        <div>
-            <h2 className="text-2xl font-semibold -mt-4">Tyran Rice Jr.</h2>
-            <h3 className="text-base">Delaware, United States</h3>
-        </div>
-      </div>
+    <div className="max-w-11/12 mx-auto grid grid-cols-1 lg:grid-cols-5 gap-12 z-10 relative mt-8 text-center">
 
-      {/* Right: Bio and Resume */}
-      <div className="flex flex-col justify-center space-y-6 text-sm items-center">
+
+      {/* Left: Bio and Resume */}
+      <div className="flex flex-col justify-center space-y-6 text-sm items-center order-2 lg:order-1 mx-2 lg:text-start lg:items-start lg:col-span-3 lg:-mx-12">
         <p>
           I’m <strong>Tyran Rice Jr.</strong>, a software engineer and game developer with a passion for 
           artificial intelligence, gamification, and anything related to space!
@@ -72,14 +62,27 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
         <a
           href="/files/TyranRice_Resume.pdf"
           download
-          className="inline-flex items-center gap-2 -mt-2 bg-white text-base text-black px-4 py-1.5 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110"
+          className="inline-flex items-center gap-2 -mt-2 bg-white text-sm text-black px-4 py-1.5 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110 cursor-none"
         >
           <Download className="w-4 h-4" /> Download Resume
         </a>
       </div>
+
+      {/* Right: Profile Info */}
+      <div className="flex flex-col items-center space-y-6 order-1 lg:order-2 lg:col-span-2">
+        <img
+          src="/portfoliopicture.jpeg"
+          alt="Tyran Rice Jr."
+          className="w-48 h-48 rounded-full border-4 border-white object-cover shadow-lg"
+        />
+        <div>
+            <h2 className="text-2xl font-semibold -mt-4">Tyran Rice Jr.</h2>
+            <h3 className="text-base">Delaware, United States</h3>
+        </div>
+      </div>
     </div>
-    <div className="overflow-hidden">
-          <h3 className="text-xl font-bold mb-2 text-center">Skills & Tools</h3>
+    <div className="mt-4 lg:overflow-hidden">
+          <h3 className="text-lg font-bold mb-2 text-center">Skills & Tools</h3>
           <ul className="grid grid-flow-dense grid-cols-6 gap-2 text-xs">
             {allTags.filter((tag: string) => {
                 if(tagCategoryMap[tag] === "role") return false;
@@ -91,7 +94,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
                     return (
                         <span
                         key={tag}
-                        className={`inline-flex items-center ${colorClass} px-2.5 py-1 text-sm rounded-full`}
+                        className={`inline-flex items-center ${colorClass} px-2.5 py-1 text-xs lg:text-sm rounded-full`}
                         >
                         {icon} {tag}
                         </span>

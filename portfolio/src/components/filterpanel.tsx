@@ -30,18 +30,18 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
   
   return (
     <details className="border-b-2 border-gray-200 p-4 mt-4 text-sm">
-      <summary className="flex justify-between cursor-pointer text-white text-lg font-bold items-center">Filter Options
-      <button onClick={clearFilters} className="bg-red-500/70 rounded-md p-2 text-sm m-0">
+      <summary className="flex justify-between text-white text-lg font-bold items-center transition cursor-none hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)]">Filter Options
+      <button onClick={clearFilters} className="bg-red-500/70 rounded-md p-2 text-sm m-0 transition hover:bg-red-600/80 hover:scale-115 cursor-none">
         Clear All Filters
       </button>
       </summary>
       <div className="space-y-4 mt-2">
         <div className="flex items-center">
-          <span className="w-16 mt-1.5 text-white font-semibold">Type</span>
+          <span className="w-16 mt-1.5 text-white font-semibold cursor-none">Type</span>
           <select
             onChange={handleTypeChange}
             value={filters.type || "all"}
-            className="mt-1.5 p-2 text-sm text-white bg-black border border-white/20 rounded"
+            className="mt-1.5 p-2 text-sm text-white bg-black border border-white/20 rounded cursor-none"
           >
             <option className="text-white" value="all">All</option>
             <option className="text-white" value="job">Jobs</option>
@@ -51,10 +51,10 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
         </div>
         {Object.entries(categorizedTags).map(([category, tags]) => (
           <details key={category} className="bg-white/5 rounded p-2">
-            <summary className="cursor-pointer font-semibold text-white capitalize mb-1">
+            <summary className="font-semibold text-white capitalize mb-1 cursor-none transition hover:drop-shadow-[2px_2px_8px_rgba(255,255,255,1)]">
               {category}
             </summary>
-            <div className="flex flex-wrap gap-2.5 mt-3">
+            <div className="flex flex-wrap gap-2.5 mt-3 cursor-none">
               {tags.map((tag) => {
                 const colorClass = tagColors[category] || tagColors.default;
                 const icon = tagIcons[category] || null;
@@ -63,7 +63,7 @@ export const FilterPanel = ({ filters, setFilters }: FilterPanel_Interface) => {
                   <button
                     key={tag}
                     onClick={() => handleTagToggle(tag)}
-                    className={`inline-flex items-center gap-.5 px-2.5 py-1 text-sm rounded-full border hover:scale-110 transition-all duration-150 ease-in-out ${
+                    className={`inline-flex items-center gap-.5 px-2.5 py-1 text-sm rounded-full border hover:scale-110 transition-all duration-150 ease-in-out cursor-none ${
                       isActive
                         ? `${colorClass} border-transparent`
                         : `bg-gray-200 text-gray-800`
