@@ -25,7 +25,7 @@ export const PortfolioHub = () => {
       {/*Title*/}
       <div className="lg:max-w-1/2 relative lg:top-1/5 lg:left-1/2 z-10 lg:-translate-x-1/2 lg:-translate-y-1/5 text-center">
           {/*<img className="fixed rounded-full border-8 scale-25 -translate-y-5/8" src="./portfoliopicture.jpeg" alt="Picture Of Me"></img>*/}
-          <AuroraText className="text-5xl lg:text-7xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Tyran Rice Jr.</AuroraText>
+          <AuroraText className="text-5xl lg:text-6xl font-black mb-2 drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Tyran Rice Jr.</AuroraText>
           <h2 className="text-lg lg:text-xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Software Engineer & Game Developer</h2>
           <h2 className="text-lg lg:text-xl font-bold drop-shadow-[2px_2px_8px_rgba(255,255,255,0.4)]">Delaware, United States</h2>
       </div>
