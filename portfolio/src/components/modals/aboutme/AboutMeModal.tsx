@@ -60,7 +60,7 @@ export const AboutMeModal = ({ onClose }: { onClose: () => void }) => (
         </p>
 
         <a
-          href="/files/TyranRice_Resume.pdf"
+          href="/files/Tyran Rice Resume - SE.pdf"
           download
           className="inline-flex items-center gap-2 -mt-2 bg-white text-sm text-black px-4 py-1.5 rounded-md hover:bg-gray-200 transition font-semibold w-fit hover:scale-110 cursor-none"
         >
