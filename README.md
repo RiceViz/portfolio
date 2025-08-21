@@ -16,6 +16,6 @@ Link To Website: <https://tyranricejr.vercel.app>
 
 ## Screenshots
 
-![Portfolio Main Screen](/images/portfolio1.png "Portfolio Main Screen")
+![Portfolio Main Screen](/images/Portfolio1.png "Portfolio Main Screen")
 
-![Portfolio About Me Screen](/images/portfolio2.png "Portfolio About Me Screen")
+![Portfolio About Me Screen](/images/Portfolio2.png "Portfolio About Me Screen")
